@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno Digital Solutions</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        /* GLOBAL STYLES  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #333;
+            transition: 0.4s;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: #fff;
+        }
+
+        header {
+            background: #0d1b2a;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 45px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00b4d8;
+        }
+
+        /* ================= HERO SECTION ================= */
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(13, 244, 229, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://wallpaperaccess.com/full/210975.jpg');
+            background-size: auto;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #33cde8;
+            padding: 20px;
+            transform: matrix3d(4567, 3456);
+            transition-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+            animation-direction: fadeIn 2s;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            border: none;
+            background: #00b4d8;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background: #0096c7;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .services,
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .dark-mode .card {
+            background: #1f1f1f;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* ================= CONTACT ================= */
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            padding: 12px;
+            border: none;
+            background: #0d1b2a;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #0d1b2a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            background: #00b4d8;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Embedded Logo -->
+            <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+            TECHNO
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="toggle-btn" onclick="toggleMode()">Dark Mode</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <h1>Innovating the Future with Technology</h1>
+        <p>We build smart, secure and scalable digital solutions.</p>
+        <button onclick="scrollToSection()">Explore Services</button>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Modern responsive websites with high performance.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile Applications</h3>
+                <p>Android & iOS applications with seamless UI/UX.</p>
+            </div>
+            <div class="card">
+                <h3>Cyber Security</h3>
+                <p>Advanced protection against cyber threats.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Solutions</h3>
+                <p>Scalable cloud hosting and deployment services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <h2>Our Projects</h2>
+        <div class="portfolio">
+            <div class="card">
+                <h3>E-Commerce Platform</h3>
+                <p>Secure online store with payment integration.</p>
+            </div>
+            <div class="card">
+                <h3>AI Chatbot System</h3>
+                <p>Automated business communication assistant.</p>
+            </div>
+            <div class="card">
+                <h3>School Management System</h3>
+                <p>Digital academic administration solution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="phone" id="phone" placeholder="Phone">
+            <input type="email" id="service" placeholder="email">
+
+            <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+            <button type="submit" onclick="sendWhatsAppMessage2()" class="btn btn-primary py-3 px-4">Send
+                Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Taji Kyalo</h3>
+                        <p>Full-Stack Web Developer</p>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">Transforming ideas into powerful web solutions
+                            that drive business growth.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <nav class="footer-nav">
+                            <a href='/'>Home</a>
+                            <a href='/about'>About</a>
+                            <a href='/services'>Services</a>
+                            <a href='/portfolio'>Portfolio</a>
+                            <a href='/contact'>Contact</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Get In Touch</h4>
+                        <div class="footer-contact">
+                            <p>📧 <a href="mailto:walkerkyalo@gmail.com">walkerkyalo@gmail.com</a></p>
+                            <p>📱 <a href="tel:+254701159909">+254701159909</a></p>
+                            <p><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                                    style="vertical-align: middle; margin-right: 0.3rem;">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg> <a href="https://wa.me/254701159909" target="_blank">WhatsApp</a></p>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Follow Me</h4>
+                        <div class="footer-social-links">
+                            <a href="https://www.linkedin.com/in/taji-mutembei-417911325?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                target="_blank" title="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/walker-2" target="_blank" title="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" title="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" title="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" title="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Let's Chat 💬</h4>
+                        <div class="mini-chatbot">
+                            <div class="mini-chat-display" id="miniChatDisplay">
+                                <div class="mini-chat-message bot-message">
+                                    <div class="message-content">👋 Hi! Questions?</div>
+                                </div>
+                            </div>
+                            <input type="text" class="mini-chat-input" placeholder="Your Name" id="name_">
+                            <input type="text" class="mini-chat-input" placeholder="Phone" id="phone_">
+                            <input type="text" class="mini-chat-input" placeholder="Service" id="subject">
+                            <button
+                            class="mini-chat-send-btn" onclick="sendWhatsAppMessage()"
+                            class="btn btn-primary py-3 px-4">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Tajitech services.|| All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+
+            //  Dark Mode
+            function toggleMode() {
+                document.body.classList.toggle("dark-mode");
+            }
+
+            // Scroll Function 
+            function scrollToSection() {
+                document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+            }
+
+            // Form Validation
+            function sendWhatsAppMessage() {
+                let name = document.getElementById("name").value;
+                let phone = document.getElementById("phone").value;
+                let service = document.getElementById("subject").value;
+                let message = document.getElementById("message").value;
+                var whatsappUrl = "https://api.whatsapp.com/send?phone=+254701159909&text=" + "Hey Taji, My name is " + encodeURIComponent(name) + " (" + encodeURIComponent(phone) + "). I am enquiring about " + encodeURIComponent(subject) + " service. " + encodeURIComponent(message);
+
+
+                if (name == "" || phone == "" || message == "") {
+                    alert("Please fill all fields!");
+                    return false;
+                }
+
+                alert("Message sent successfully!");
+                return true;
+                window.open(whatsappUrl, "_blank");
+
+            }
+            function sendWhatsAppMessage2() {
+                let name = document.getElementById("name").value;
+                let phone = document.getElementById("phone").value;
+                let service = document.getElementById("service").value;
+                let message = document.getElementById("message").value;
+                var whatsappUrl = "https://api.whatsapp.com/send?phone=+254701159909&text=" + "Hey Taji, My name is " + encodeURIComponent(name) + " (" + encodeURIComponent(phone) + "). I am enquiring about " + encodeURIComponent(service) + " service. " + encodeURIComponent(message);
+
+                window.open(whatsappUrl, "_blank");
+            }
+        </script>
+
+</body>
+
+</html>

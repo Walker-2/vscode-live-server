@@ -1,0 +1,65 @@
+For all you html lovers out there.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            font-size: 2em;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateX(0);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            white-space: nowrap;
+        }
+        .show {
+            opacity: 1;
+        }
+        .hide {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <script>
+        const w = [
+            String.fromCharCode(67,104,101,101,114,115,33),
+            String.fromCharCode(77,97,116,101,44),
+            String.fromCharCode(121,111,117,114),
+            String.fromCharCode(109,121),
+            String.fromCharCode(107,105,110,100),
+            String.fromCharCode(111,102),
+            String.fromCharCode(112,101,111,112,108,101,33)
+        ];
+        function s(i) {
+            const e = document.getElementById('message');
+            e.textContent = w[i];
+            e.classList.remove('show', 'hide');
+            e.classList.add('show');
+            setTimeout(() => {
+                e.classList.add('hide');
+                setTimeout(() => {
+                    e.classList.remove('show', 'hide');
+                    if (i < w.length - 1) {
+                        s(i + 1);
+                    }
+                }, 1000);
+            }, 2000);
+        }
+        window.addEventListener('load', () => s(0));
+    </script>
+</body>
+</html>

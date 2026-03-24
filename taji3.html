@@ -1,0 +1,59 @@
+document.getElementById('regForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let valid = true;
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  // Validation patterns
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^\d{10}$/;
+
+  // Name validation
+  if(name === ''){
+    valid = false;
+    document.getElementById('nameError').textContent = "Full name is required.";
+  } else {
+    document.getElementById('nameError').textContent = "";
+  }
+
+  // Email validation
+  if(!emailRegex.test(email)){
+    valid = false;
+    document.getElementById('emailError').textContent = "Invalid email format.";
+  } else {
+    document.getElementById('emailError').textContent = "";
+  }
+
+  // Phone validation
+  if(!phoneRegex.test(phone)){
+    valid = false;
+    document.getElementById('phoneError').textContent = "Enter a valid 10-digit phone number.";
+  } else {
+    document.getElementById('phoneError').textContent = "";
+  }
+
+  // Password validation
+  if(password.length < 6){
+    valid = false;
+    document.getElementById('passwordError').textContent = "Password must be at least 6 characters.";
+  } else {
+    document.getElementById('passwordError').textContent = "";
+  }
+
+  // Confirm password validation
+  if(password !== confirmPassword){
+    valid = false;
+    document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+  } else {
+    document.getElementById('confirmPasswordError').textContent = "";
+  }
+
+  if(valid){
+    alert("Form submitted successfully!");
+    document.getElementById('regForm').reset();
+  }
+});
