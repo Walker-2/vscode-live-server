@@ -31,14 +31,20 @@
         }
 
         header {
-            background: #0d1b2a;
+            background: #2a0de7;
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #fff;
         }
-
+        .header-bar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            x-index: 1000;
+        }
         .logo {
             display: flex;
             align-items: center;
@@ -75,7 +81,7 @@
         .hero {
             height: 90vh;
             background: linear-gradient(rgba(13, 244, 229, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://wallpaperaccess.com/full/210975.jpg');
+                url('https://wallpaperaccess.com/full/210975.jpg') url('https://picdetective.com/assets/tineye-alternative-hero.DSvvJBmt.webp');
             background-size: auto;
             background-position: center;
             display: flex;
@@ -193,7 +199,7 @@
 
 <body>
 
-    <header>
+    <header class="header-bar">
         <div class="logo">
             <!-- Embedded Logo -->
             <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
