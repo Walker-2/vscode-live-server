@@ -105,11 +105,178 @@
 			font-size: 40px;
 			font-weight: bold;
 			display: block;
+			animation: countUp 2s ease-out;
 		}
 
 		.stat-label {
 			font-size: 16px;
 			margin-top: 10px;
+		}
+
+		@keyframes countUp {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Testimonial Styles */
+		.testimonial-section {
+			background: #f8f9fa;
+			padding: 80px 0;
+		}
+
+		.testimonial-card {
+			background: white;
+			padding: 40px;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			margin-bottom: 30px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			border-left: 4px solid #667eea;
+		}
+
+		.testimonial-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+		}
+
+		.testimonial-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.testimonial-avatar {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-weight: bold;
+			font-size: 24px;
+			margin-right: 15px;
+		}
+
+		.testimonial-info h5 {
+			margin: 0;
+			color: #333;
+			font-weight: 600;
+		}
+
+		.testimonial-info p {
+			margin: 5px 0 0 0;
+			color: #667eea;
+			font-size: 14px;
+		}
+
+		.testimonial-text {
+			color: #555;
+			font-style: italic;
+			line-height: 1.6;
+			margin-bottom: 15px;
+		}
+
+		.star-rating {
+			color: #ffc107;
+			font-size: 14px;
+		}
+
+		/* Experience & Stats Styles */
+		.experience-section {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 80px 0;
+		}
+
+		.experience-stat {
+			text-align: center;
+			padding: 30px;
+			border-right: 1px solid rgba(255,255,255,0.2);
+		}
+
+		.experience-stat:last-child {
+			border-right: none;
+		}
+
+		.experience-number {
+			font-size: 48px;
+			font-weight: bold;
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.experience-label {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.experience-desc {
+			font-size: 14px;
+			opacity: 0.9;
+		}
+
+		@media (max-width: 768px) {
+			.experience-stat {
+				border-right: none;
+				border-bottom: 1px solid rgba(255,255,255,0.2);
+				padding: 20px;
+			}
+
+			.experience-stat:last-child {
+				border-bottom: none;
+			}
+
+			.stat-number {
+				font-size: 32px;
+			}
+
+			.experience-number {
+				font-size: 36px;
+			}
+		}
+
+		/* Carousel styles */
+		.testimonial-carousel {
+			padding: 20px 0;
+		}
+
+		.owl-carousel .owl-nav {
+			margin-top: 20px;
+		}
+
+		.owl-carousel .owl-nav button {
+			background: #667eea !important;
+			color: white !important;
+			border-radius: 50%;
+			width: 45px;
+			height: 45px;
+			padding: 0 !important;
+			margin: 0 5px;
+		}
+
+		.owl-carousel .owl-nav button:hover {
+			background: #764ba2 !important;
+		}
+
+		.owl-carousel .owl-dots {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.owl-carousel .owl-dots .owl-dot span {
+			background: #667eea !important;
+		}
+
+		.owl-carousel .owl-dots .owl-dot.active span {
+			background: #764ba2 !important;
 		}
 	</style>
 </head>
@@ -128,6 +295,7 @@
 					<li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
 					<li class="nav-item"><a href="#technologies" class="nav-link">Technologies</a></li>
 					<li class="nav-item"><a href="#templates" class="nav-link">Templates</a></li>
+					<li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
 					<li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 					<li class="nav-item"><a href="#" class="nav-link btn btn-primary text-white ml-2">Get Started</a></li>
 				</ul>
@@ -387,9 +555,59 @@
 		</div>
 	</section>
 
+	<!-- Experience & Achievements Section -->
+	<section class="experience-section" id="experience">
+		<div class="container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-8 text-center">
+					<h2 class="mb-4" style="color: white;">Our Experience & Achievements</h2>
+					<p style="color: rgba(255,255,255,0.9);">Trusted by developers worldwide to build innovative web solutions</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-lg-3">
+					<div class="experience-stat">
+						<span class="experience-number">10+</span>
+						<span class="experience-label">Years of Experience</span>
+						<span class="experience-desc">Building and supporting web technologies</span>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="experience-stat">
+						<span class="experience-number">5000+</span>
+						<span class="experience-label">Projects Completed</span>
+						<span class="experience-desc">Successfully delivered across all industries</span>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="experience-stat">
+						<span class="experience-number">8500+</span>
+						<span class="experience-label">Happy Clients</span>
+						<span class="experience-desc">Satisfied customers worldwide</span>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="experience-stat">
+						<span class="experience-number">150+</span>
+						<span class="experience-label">Technologies</span>
+						<span class="experience-desc">Curated and constantly updated</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- Stats Section -->
 	<section class="stats-section">
 		<div class="container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-8 text-center">
+					<h2 class="mb-4" style="color: white;">Platform Statistics</h2>
+					<p style="color: rgba(255,255,255,0.9);">Join thousands of developers using Tajitech</p>
+				</div>
+			</div>
+
 			<div class="row">
 				<div class="col-md-6 col-lg-3">
 					<div class="stat-item">
@@ -413,6 +631,150 @@
 					<div class="stat-item">
 						<span class="stat-number">500+</span>
 						<span class="stat-label">Projects Built</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section -->
+	<section class="testimonial-section" id="testimonials">
+		<div class="container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-8 text-center">
+					<h2 class="mb-4">What Our Users Say</h2>
+					<p class="text-muted">Hear from developers who have successfully built their websites using Tajitech</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="testimonial-carousel owl-carousel owl-theme">
+						<!-- Testimonial 1 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">SA</div>
+									<div class="testimonial-info">
+										<h5>Sarah Anderson</h5>
+										<p>Full Stack Developer</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"Tajitech has been a game-changer for my development workflow. The comprehensive technology descriptions and comparisons save me hours of research. Highly recommended!"</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 2 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">JK</div>
+									<div class="testimonial-info">
+										<h5>James Kelly</h5>
+										<p>Web Entrepreneur</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"As a beginner, I found Tajitech incredibly helpful. The learning difficulty ratings and community reviews helped me choose the right stack for my first project. Great platform!"</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 3 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">EM</div>
+									<div class="testimonial-info">
+										<h5>Emily Martinez</h5>
+										<p>Startup Founder</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"Tajitech's templates and technology guides helped us launch our SaaS product in record time. The structured approach to tech stack selection is invaluable for startups."</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 4 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">DP</div>
+									<div class="testimonial-info">
+										<h5>David Park</h5>
+										<p>CTO at TechCorp</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"We use Tajitech to evaluate new technologies for our enterprise projects. The detailed comparisons and pros/cons analysis are exactly what we needed for informed decision-making."</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 5 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">LC</div>
+									<div class="testimonial-info">
+										<h5>Lisa Chen</h5>
+										<p>Freelance Developer</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"The ability to save and version projects on Tajitech has revolutionized how I manage client requests. I can now propose multiple tech stack options with confidence."</p>
+							</div>
+						</div>
+
+						<!-- Testimonial 6 -->
+						<div class="item">
+							<div class="testimonial-card">
+								<div class="testimonial-header">
+									<div class="testimonial-avatar">MR</div>
+									<div class="testimonial-info">
+										<h5>Michael Rodriguez</h5>
+										<p>Tech Lead</p>
+									</div>
+								</div>
+								<div class="star-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p class="testimonial-text">"Outstanding community reviews section! Reading real experiences from other developers has helped us avoid pitfalls and choose technologies that truly fit our needs."</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -570,6 +932,29 @@
 	<script src="js/main.js"></script>
 
 	<script>
+		// Initialize testimonial carousel
+		$(document).ready(function() {
+			$('.testimonial-carousel').owlCarousel({
+				loop: true,
+				margin: 20,
+				nav: true,
+				dots: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				responsive: {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 1
+					},
+					1000: {
+						items: 1
+					}
+				}
+			});
+		});
+
 		// Smooth scrolling for navigation links
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
@@ -582,6 +967,42 @@
 				}
 			});
 		});
+
+		// Counter animation for stats
+		function animateCounters() {
+			const statNumbers = document.querySelectorAll('.stat-number, .experience-number');
+			statNumbers.forEach(element => {
+				const target = parseInt(element.innerText);
+				if (target) {
+					let current = 0;
+					const increment = target / 50;
+					const timer = setInterval(() => {
+						current += increment;
+						if (current >= target) {
+							element.innerText = element.innerText;
+							clearInterval(timer);
+						} else {
+							element.innerText = Math.floor(current) + (element.innerText.includes('+') ? '+' : '');
+						}
+					}, 30);
+				}
+			});
+		}
+
+		// Trigger animation when section is in view
+		window.addEventListener('scroll', function() {
+			const experienceSection = document.querySelector('.experience-section');
+			const statsSection = document.querySelector('.stats-section');
+			if (experienceSection && isElementInViewport(experienceSection)) {
+				animateCounters();
+				window.removeEventListener('scroll', arguments.callee);
+			}
+		});
+
+		function isElementInViewport(el) {
+			const rect = el.getBoundingClientRect();
+			return rect.top <= window.innerHeight && rect.bottom >= 0;
+		}
 	</script>
 </body>
 
